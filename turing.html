@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Turing: Pioneer of AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c;
+            color: #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+        .slide-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            height: 60vh;
+            background-color: #2d3748;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 2.5rem;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .slide h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #63b3ed;
+        }
+        .slide p {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            text-align: center;
+        }
+        .slide ul {
+            list-style: none;
+            text-align: left;
+            padding-left: 0;
+            margin-top: 1rem;
+        }
+        .slide li {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .slide li::before {
+            content: '•';
+            color: #63b3ed;
+            font-size: 1.5rem;
+            line-height: 1;
+            margin-right: 0.5rem;
+        }
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+        .nav-button {
+            padding: 0.75rem 1.5rem;
+            background-color: #4299e1;
+            color: white;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out;
+            cursor: pointer;
+            border: none;
+        }
+        .nav-button:hover {
+            background-color: #3182ce;
+        }
+        .image-container {
+            margin-top: 1.5rem;
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 3px solid #63b3ed;
+            max-width: 300px;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .link-button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+            background-color: #ed8936;
+            color: white;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .link-button:hover {
+            background-color: #dd6b20;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide-container">
+        <!-- Slide 1: Title Slide -->
+        <div class="slide active" id="slide-1">
+            <h2 class="text-white">Alan Turing: The Father of AI</h2>
+            <p>An interactive presentation on the life, work, and legacy of Alan Turing.</p>
+            <div class="image-container">
+                <img src="https://placehold.co/300x300/4299e1/ffffff?text=Alan+Turing" alt="Alan Turing portrait">
+            </div>
+            <a href="https://www.youtube.com/watch?v=A2Jc8P06b44" target="_blank" class="link-button">Watch a video on Turing</a>
+        </div>
+
+        <!-- Slide 2: Early Life -->
+        <div class="slide" id="slide-2">
+            <h2>Early Life and Education</h2>
+            <ul>
+                <li>Born in London, 1912.</li>
+                <li>Showed early genius in math and science.</li>
+                <li>Attended King's College, Cambridge.</li>
+                <li>Earned his Ph.D. from Princeton University.</li>
+            </ul>
+        </div>
+
+        <!-- Slide 3: Major Contributions -->
+        <div class="slide" id="slide-3">
+            <h2>Major Contributions</h2>
+            <ul>
+                <li>**The Turing Machine:** A theoretical model for a universal computer.</li>
+                <li>**Cryptanalysis:** Broke the German Enigma code during WWII, significantly shortening the war.</li>
+                <li>**The Halting Problem:** Proved that some problems cannot be solved by a computer.</li>
+            </ul>
+        </div>
+
+        <!-- Slide 4: Contributions to AI -->
+        <div class="slide" id="slide-4">
+            <h2>Contributions to AI</h2>
+            <p>Turing laid the conceptual groundwork for the field of artificial intelligence.</p>
+            <ul>
+                <li>**The Turing Test:** A test to determine if a machine can exhibit intelligent behavior.</li>
+                <li>**"Intelligent Machinery" Report:** Explored ideas about machine learning and neural networks.</li>
+            </ul>
+            <a href="https://www.youtube.com/watch?v=3w3u3e76aC4" target="_blank" class="link-button">Learn about the Turing Test</a>
+        </div>
+
+        <!-- Slide 5: Influence on Modern AI -->
+        <div class="slide" id="slide-5">
+            <h2>Influence on Modern AI</h2>
+            <p>Turing's work is the foundation of today's AI.</p>
+            <ul>
+                <li>**Foundation of Computer Science:** The concept of the Turing Machine is still used.</li>
+                <li>**Anticipated Machine Learning:** His ideas on "learning machines" paved the way for modern AI.</li>
+                <li>**Legacy of the Turing Test:** A key benchmark for modern NLP and chatbots.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="navigation-buttons">
+        <button id="prevBtn" class="nav-button">Previous</button>
+        <button id="nextBtn" class="nav-button">Next</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const nextBtn = document.getElementById('nextBtn');
+            const prevBtn = document.getElementById('prevBtn');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.add('active');
+                        slide.style.zIndex = 10;
+                    } else {
+                        slide.classList.remove('active');
+                        slide.style.zIndex = 1;
+                    }
+                });
+            }
+
+            nextBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            });
+
+            // Initial slide display
+            showSlide(currentSlide);
+        });
+    </script>
+
+</body>
+</html>

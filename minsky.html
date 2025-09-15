@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvin Minsky: The Architect of Mind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f8f0; /* Soft green-grey background */
+        }
+        .slide {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            min-height: 100vh;
+            color: #334155;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+        .bg-color-1 { background-color: #e6f1f3; }
+        .bg-color-2 { background-color: #f3e6f1; }
+        .bg-color-3 { background-color: #f1f3e6; }
+        .bg-color-4 { background-color: #e6f3f1; }
+        .card {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 90%;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .icon-container {
+            font-size: 3rem;
+            color: #4b5563;
+        }
+        .resource-link {
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .resource-link:hover {
+            background-color: #d1d5db;
+            transform: scale(1.02);
+        }
+        .navigation-button {
+            background-color: #374151; /* Darker gray */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navigation-button:hover {
+            background-color: #1f2937;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div id="presentation-container" class="relative">
+
+        <!-- Slide 1: Introduction -->
+        <div id="slide-1" class="slide bg-color-1 active">
+            <div class="card space-y-6">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-800 leading-tight">Marvin Minsky</h1>
+                <h2 class="text-2xl sm:text-3xl font-semibold text-gray-600">The Architect of the Mind</h2>
+                <div class="mt-8 flex flex-col items-center">
+                    <img src="https://placehold.co/400x400/9ca3af/ffffff?text=Marvin+Minsky" alt="Illustration of Marvin Minsky" class="rounded-full shadow-lg w-40 h-40 object-cover mb-4">
+                    <p class="text-lg text-gray-700">Discover the ideas of Marvin Minsky, co-founder of the MIT AI Lab and author of "The Society of Mind."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Early Life & MIT -->
+        <div id="slide-2" class="slide bg-color-2">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">Early Life & MIT</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://placehold.co/400x300/fca5a5/7f1d1d?text=MIT+AI+Lab" alt="Illustration of the MIT Artificial Intelligence Laboratory" class="w-full rounded-xl shadow-lg">
+                    </div>
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">Born in 1927, Minsky earned a B.A. from Harvard and a Ph.D. from Princeton.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>In 1959, he co-founded the **MIT Artificial Intelligence Laboratory** with John McCarthy.</li>
+                            <li>The lab became one of the world's most important centers for AI research.</li>
+                            <li>Minsky also co-authored the book *Perceptrons* which highlighted the limitations of simple neural networks at the time.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: The Society of Mind -->
+        <div id="slide-3" class="slide bg-color-3">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">The Society of Mind</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">Minsky's book, published in 1986, proposed a new theory of how the mind works.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>He argued that intelligence is not one single thing.</li>
+                            <li>Instead, the mind is a "society" of smaller, simpler parts he called **agents**.</li>
+                            <li>These "agents" work together to produce complex thoughts, emotions, and consciousness.</li>
+                        </ul>
+                        <a href="https://en.wikipedia.org/wiki/Society_of_Mind" target="_blank" class="block w-full text-center mt-4">
+                            <div class="resource-link bg-gray-200 p-4 rounded-xl shadow-md text-gray-800 font-semibold flex items-center justify-center">
+                                <span class="mr-2">📝</span> Learn more about the theory
+                            </div>
+                        </a>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/400x300/6b7280/ffffff?text=The+Mind+as+a+Society" alt="Illustration of many small agents working together in a brain" class="w-full rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Key Concepts -->
+        <div id="slide-4" class="slide bg-color-4">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">Key Contributions</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="p-6 bg-gray-50 rounded-xl shadow-md space-y-2">
+                        <div class="icon-container">🧩</div>
+                        <h3 class="text-xl font-bold">Frames</h3>
+                        <p class="text-gray-600">A concept for organizing knowledge into structured templates to help AI systems understand the world.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-xl shadow-md space-y-2">
+                        <div class="icon-container">🤖</div>
+                        <h3 class="text-xl font-bold">Robotics</h3>
+                        <p class="text-gray-600">Minsky's work led to the development of early robotic arms and other devices.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-xl shadow-md space-y-2">
+                        <div class="icon-container">🗣️</div>
+                        <h3 class="text-xl font-bold">LISP</h3>
+                        <p class="text-gray-600">He was a champion of the Lisp programming language, a foundational tool for early AI research.</p>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <a href="https://www.youtube.com/watch?v=sO-oF9h3_yQ" target="_blank" class="block w-full text-center mt-4">
+                        <div class="resource-link bg-gray-200 p-4 rounded-xl shadow-md text-gray-800 font-semibold flex items-center justify-center">
+                            <span class="mr-2">🎥</span> See Minsky talk about Lisp
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Enduring Legacy -->
+        <div id="slide-5" class="slide bg-color-1">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">An Enduring Legacy</h2>
+                <p class="text-lg text-gray-700">Minsky's ideas continue to influence AI and cognitive science today.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left space-y-4">
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>His work on "frames" is still a core concept in **knowledge representation**.</li>
+                            <li>The book *Perceptrons* influenced the development of **deep learning** by showing what was needed to create more complex neural networks.</li>
+                            <li>He helped establish AI as a serious scientific field and inspired many of today's leading researchers.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/400x300/a8a29e/ffffff?text=Deep+Learning" alt="Illustration of interconnected nodes, representing a neural network" class="w-full rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4">
+        <button id="prevBtn" class="navigation-button">Previous</button>
+        <button id="nextBtn" class="navigation-button">Next</button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        // Initialize the first slide
+        window.onload = () => {
+            showSlide(currentSlide);
+        };
+    </script>
+</body>
+</html>

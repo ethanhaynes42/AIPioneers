@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Khwarizmi: The Father of Algebra</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .slide {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 4rem 1rem;
+            text-align: center;
+            scroll-snap-align: start;
+        }
+        .scroll-container {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+        }
+        .card {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        .nav-button {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .content-box {
+            background-color: #e2e8f0;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-top: 1.5rem;
+            text-align: left;
+        }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="scroll-container">
+
+    <!-- Slide 1: Title -->
+    <section id="slide1" class="slide bg-blue-500 text-white">
+        <div class="card bg-white text-gray-800">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Al-Khwarizmi</h1>
+            <h2 class="text-2xl md:text-3xl font-light">The Father of Algebra</h2>
+        </div>
+        <a href="#slide2" class="mt-8 px-8 py-4 bg-white text-blue-500 font-bold rounded-full shadow-lg nav-button hover:bg-gray-100">Start Presentation</a>
+    </section>
+
+    <!-- Slide 2: Early Life & Context -->
+    <section id="slide2" class="slide bg-white text-gray-800">
+        <div class="card">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4">Early Life & The House of Wisdom</h3>
+            <p class="text-lg md:text-xl text-gray-600 mb-6">
+                Muhammad ibn Musa al-Khwarizmi was a Persian mathematician, astronomer, and geographer born around 780 CE. He was a scholar at the "House of Wisdom" in Baghdad, a renowned intellectual center during the Islamic Golden Age.
+            </p>
+            <div class="flex justify-center mt-6">
+                <a href="https://en.wikipedia.org/wiki/House_of_Wisdom" target="_blank" class="px-6 py-3 bg-blue-500 text-white font-bold rounded-full shadow-lg nav-button mr-4">Explore the House of Wisdom</a>
+                <button onclick="getMoreInfo('house of wisdom')" class="px-6 py-3 bg-gray-200 text-gray-800 font-bold rounded-full shadow-lg nav-button">Generate More Info</button>
+            </div>
+            <div id="more-info-slide2" class="content-box mt-4 hidden">
+                <p class="text-gray-700 text-sm italic"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Algebra -->
+    <section id="slide3" class="slide bg-gray-100 text-gray-800">
+        <div class="card">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4">Algebra: His Greatest Contribution</h3>
+            <p class="text-lg md:text-xl text-gray-600 mb-6">
+                Al-Khwarizmi's most famous work is "The Compendious Book on Calculation by Completion and Balancing," known as <span class="font-bold italic">Al-Jabr</span>. This treatise presented the first systematic solutions for linear and quadratic equations, establishing algebra as an independent mathematical discipline. The word "algebra" is a direct derivation of the book's title.
+            </p>
+            <div class="flex justify-center mt-6">
+                <a href="https://www.britannica.com/topic/The-Compendious-Book-on-Calculation-by-Completion-and-Balancing" target="_blank" class="px-6 py-3 bg-blue-500 text-white font-bold rounded-full shadow-lg nav-button mr-4">Read more about Al-Jabr</a>
+                <button onclick="getMoreInfo('al-jabr book summary')" class="px-6 py-3 bg-gray-200 text-gray-800 font-bold rounded-full shadow-lg nav-button">Generate a Summary</button>
+            </div>
+            <div id="more-info-slide3" class="content-box mt-4 hidden">
+                <p class="text-gray-700 text-sm italic"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Algorithms -->
+    <section id="slide4" class="slide bg-blue-500 text-white">
+        <div class="card bg-white text-gray-800">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4">The Birth of the "Algorithm"</h3>
+            <p class="text-lg md:text-xl text-gray-600 mb-6">
+                The term "algorithm" itself is a Latinized version of Al-Khwarizmi's name, "Algoritmi." His work on Hindu-Arabic numerals introduced a systematic, step-by-step approach to arithmetic that laid the groundwork for modern computer science.
+            </p>
+            <div class="flex justify-center mt-6">
+                <a href="https://www.britannica.com/topic/algorithm" target="_blank" class="px-6 py-3 bg-blue-500 text-white font-bold rounded-full shadow-lg nav-button mr-4">Discover More about Algorithms</a>
+                <button onclick="getMoreInfo('al-khwarizmi influence on computer science')" class="px-6 py-3 bg-gray-200 text-gray-800 font-bold rounded-full shadow-lg nav-button">Generate More Info</button>
+            </div>
+            <div id="more-info-slide4" class="content-box mt-4 hidden">
+                <p class="text-gray-700 text-sm italic"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 5: The Concept of Zero & Numerals -->
+    <section id="slide5" class="slide bg-gray-100 text-gray-800">
+        <div class="card">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4">Introducing Zero to the West</h3>
+            <p class="text-lg md:text-xl text-gray-600 mb-6">
+                Al-Khwarizmi's work was instrumental in introducing the Hindu-Arabic numeral system, including the crucial concept of zero, to the Western world. This positional system made complex calculations far simpler than the Roman numeral system.
+            </p>
+            <div class="flex justify-center mt-6">
+                <a href="https://en.wikipedia.org/wiki/Zero" target="_blank" class="px-6 py-3 bg-blue-500 text-white font-bold rounded-full shadow-lg nav-button mr-4">Learn about the History of Zero</a>
+                <button onclick="getMoreInfo('al-khwarizmi and zero')" class="px-6 py-3 bg-gray-200 text-gray-800 font-bold rounded-full shadow-lg nav-button">Generate More Info</button>
+            </div>
+            <div id="more-info-slide5" class="content-box mt-4 hidden">
+                <p class="text-gray-700 text-sm italic"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: Visual Aid -->
+    <section id="slide6" class="slide bg-blue-500 text-white">
+        <div class="card bg-white text-gray-800">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4">A Visual Representation</h3>
+            <div class="flex flex-col items-center justify-center mt-6">
+                <div id="image-container" class="w-full max-w-sm h-64 bg-gray-200 flex items-center justify-center rounded-lg shadow-inner overflow-hidden">
+                    <div id="image-loader" class="spinner hidden"></div>
+                    <img id="generated-image" src="" alt="A generated image of Al-Khwarizmi" class="rounded-lg max-w-full max-h-full object-contain hidden" />
+                    <span id="image-placeholder" class="text-gray-500">Image will appear here</span>
+                </div>
+                <button onclick="generateImage()" class="mt-6 px-6 py-3 bg-blue-500 text-white font-bold rounded-full shadow-lg nav-button">Generate an Image</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 7: Conclusion -->
+    <section id="slide7" class="slide bg-white text-gray-800">
+        <div class="card">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4">His Enduring Legacy</h3>
+            <p class="text-lg md:text-xl text-gray-600 mb-6">
+                Al-Khwarizmi's work formed the foundation of modern mathematics and computing. His concepts of algebra and algorithms are fundamental to countless fields, from engineering and finance to the very software that powers our world. His legacy proves the lasting power of intellectual curiosity and innovation.
+            </p>
+            <a href="#slide1" class="mt-8 px-8 py-4 bg-blue-500 text-white font-bold rounded-full shadow-lg nav-button hover:bg-blue-600">Back to Start</a>
+        </div>
+    </section>
+
+    <script>
+        const API_KEY = ""; // This will be provided by the environment.
+        const GENERATE_TEXT_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${API_KEY}`;
+        const GENERATE_IMAGE_URL = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${API_KEY}`;
+
+        // Function to handle fetching and displaying generated text
+        async function getMoreInfo(topic) {
+            const button = event.target;
+            const contentBox = button.parentElement.nextElementSibling;
+            const contentParagraph = contentBox.querySelector('p');
+
+            // Show content box and loader
+            contentBox.classList.remove('hidden');
+            contentParagraph.innerHTML = `<div class="spinner"></div>`;
+
+            const userQuery = `Provide a single, concise paragraph about the topic of ${topic}.`;
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                tools: [{ "google_search": {} }],
+            };
+
+            let retries = 3;
+            while (retries > 0) {
+                try {
+                    const response = await fetch(GENERATE_TEXT_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API error: ${response.statusText}`);
+                    }
+
+                    const result = await response.json();
+                    const text = result?.candidates?.[0]?.content?.parts?.[0]?.text || "Could not generate content. Please try again later.";
+                    contentParagraph.textContent = text;
+                    break;
+
+                } catch (error) {
+                    console.error('Error fetching content:', error);
+                    retries--;
+                    if (retries === 0) {
+                        contentParagraph.textContent = "Failed to load content. Please try again.";
+                    }
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                }
+            }
+        }
+        
+        // Function to generate and display an image
+        async function generateImage() {
+            const prompt = "A stylized, abstract portrait of Al-Khwarizmi, the medieval mathematician and scholar, with geometric shapes and algorithmic patterns in the background.";
+            const imageContainer = document.getElementById('image-container');
+            const imageLoader = document.getElementById('image-loader');
+            const generatedImage = document.getElementById('generated-image');
+            const imagePlaceholder = document.getElementById('image-placeholder');
+            
+            // Show loader and hide placeholder/image
+            imageLoader.classList.remove('hidden');
+            imagePlaceholder.classList.add('hidden');
+            generatedImage.classList.add('hidden');
+
+            const payload = {
+                instances: [{ prompt: prompt }],
+                parameters: { "sampleCount": 1 }
+            };
+
+            let retries = 3;
+            while (retries > 0) {
+                try {
+                    const response = await fetch(GENERATE_IMAGE_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API error: ${response.statusText}`);
+                    }
+
+                    const result = await response.json();
+                    const base64Data = result?.predictions?.[0]?.bytesBase64Encoded;
+
+                    if (base64Data) {
+                        const imageUrl = `data:image/png;base64,${base64Data}`;
+                        generatedImage.src = imageUrl;
+                        generatedImage.classList.remove('hidden');
+                        imageLoader.classList.add('hidden');
+                    } else {
+                        throw new Error("No image data received.");
+                    }
+                    break;
+                } catch (error) {
+                    console.error('Error generating image:', error);
+                    retries--;
+                    if (retries === 0) {
+                        imagePlaceholder.textContent = "Failed to load image.";
+                        imagePlaceholder.classList.remove('hidden');
+                    }
+                    imageLoader.classList.add('hidden');
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                }
+            }
+        }
+    </script>
+</body>
+</html>

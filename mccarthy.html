@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John McCarthy: A Pioneer of AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .slide {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            min-height: 100vh;
+            color: #334155;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+        .bg-color-1 { background-color: #f7f3e9; }
+        .bg-color-2 { background-color: #e9f3f7; }
+        .bg-color-3 { background-color: #f3e9f7; }
+        .bg-color-4 { background-color: #e9f7f3; }
+        .card {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 90%;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .icon-container {
+            font-size: 3rem;
+            color: #4b5563;
+        }
+        .resource-link {
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .resource-link:hover {
+            background-color: #d1d5db;
+            transform: scale(1.02);
+        }
+        .navigation-button {
+            background-color: #4b5563;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navigation-button:hover {
+            background-color: #1f2937;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div id="presentation-container" class="relative">
+
+        <!-- Slide 1: Introduction -->
+        <div id="slide-1" class="slide bg-color-1 active">
+            <div class="card space-y-6">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-800 leading-tight">John McCarthy</h1>
+                <h2 class="text-2xl sm:text-3xl font-semibold text-gray-600">A Pioneer of Artificial Intelligence</h2>
+                <div class="mt-8 flex flex-col items-center">
+                    <img src="https://placehold.co/400x400/10b981/ffffff?text=John+McCarthy" alt="Illustration of John McCarthy" class="rounded-full shadow-lg w-40 h-40 object-cover mb-4">
+                    <p class="text-lg text-gray-700">Explore the life and contributions of the man who coined the term "Artificial Intelligence."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Early Life -->
+        <div id="slide-2" class="slide bg-color-2">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">Early Life & Education</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://placehold.co/400x300/fecaca/991b1b?text=Caltech+Campus" alt="Illustration of Caltech campus" class="w-full rounded-xl shadow-lg">
+                    </div>
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">Born in 1927, McCarthy was a child prodigy with a passion for math.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Graduated high school two years early.</li>
+                            <li>Taught himself college-level math.</li>
+                            <li>Earned his B.S. in Mathematics from **Caltech** in 1948.</li>
+                            <li>Received a Ph.D. from **Princeton University** in 1951.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Coining AI -->
+        <div id="slide-3" class="slide bg-color-3">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">Coining "Artificial Intelligence"</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">In 1955, McCarthy proposed a summer workshop that would define a new field of study.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Proposed the **Dartmouth Summer Research Project on Artificial Intelligence**.</li>
+                            <li>The workshop, held in 1956, is considered the **birthplace of AI** as an academic field.</li>
+                            <li>Defined AI as: "The science and engineering of making intelligent machines."</li>
+                        </ul>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="block w-full text-center mt-4">
+                            <div class="resource-link bg-gray-200 p-4 rounded-xl shadow-md text-gray-800 font-semibold flex items-center justify-center">
+                                <span class="mr-2">🎥</span> Watch a video on the Dartmouth Workshop
+                            </div>
+                        </a>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/400x300/a3e635/1f2937?text=Dartmouth+Conference" alt="Illustration of the Dartmouth Conference" class="w-full rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Key Contributions -->
+        <div id="slide-4" class="slide bg-color-4">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">Key Contributions</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="p-6 bg-gray-50 rounded-xl shadow-md space-y-2">
+                        <div class="icon-container">🧠</div>
+                        <h3 class="text-xl font-bold">Symbolic AI</h3>
+                        <p class="text-gray-600">Focused on using formal logic to enable machines to reason and solve problems.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-xl shadow-md space-y-2">
+                        <div class="icon-container">💻</div>
+                        <h3 class="text-xl font-bold">Lisp Language</h3>
+                        <p class="text-gray-600">Created the first major programming language for symbolic computation.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-xl shadow-md space-y-2">
+                        <div class="icon-container">☁️</div>
+                        <h3 class="text-xl font-bold">Time-Sharing</h3>
+                        <p class="text-gray-600">Pioneered a method for multiple users to share a single computer's resources.</p>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <a href="https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Lisp_logo_2004.svg/1200px-Lisp_logo_2004.svg.png" target="_blank" class="block w-full text-center mt-4">
+                        <div class="resource-link bg-gray-200 p-4 rounded-xl shadow-md text-gray-800 font-semibold flex items-center justify-center">
+                            <span class="mr-2">🖼️</span> See an illustration of the Lisp logo
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Legacy -->
+        <div id="slide-5" class="slide bg-color-1">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">Enduring Legacy</h2>
+                <p class="text-lg text-gray-700">McCarthy's contributions continue to influence modern AI and computing.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left space-y-4">
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>His vision of **symbolic AI** is still used in expert systems and logical reasoning.</li>
+                            <li>Lisp's concepts of **functional programming** and recursion are found in popular modern languages like Python.</li>
+                            <li>The AI labs he founded at MIT and Stanford trained generations of AI researchers.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/400x300/a8a29e/ffffff?text=AI+Influence" alt="Illustration of AI concepts" class="w-full rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4">
+        <button id="prevBtn" class="navigation-button">Previous</button>
+        <button id="nextBtn" class="navigation-button">Next</button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        // Initialize the first slide
+        window.onload = () => {
+            showSlide(currentSlide);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashish Vaswani: A Transformer Pioneer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f8f0;
+        }
+        .slide {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            min-height: 100vh;
+            color: #334155;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+        .bg-color-1 { background-color: #e6f1f3; }
+        .bg-color-2 { background-color: #f3e6f1; }
+        .bg-color-3 { background-color: #f1f3e6; }
+        .bg-color-4 { background-color: #e6f3f1; }
+        .card {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 90%;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .icon-container {
+            font-size: 3rem;
+            color: #4b5563;
+        }
+        .resource-link {
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .resource-link:hover {
+            background-color: #d1d5db;
+            transform: scale(1.02);
+        }
+        .navigation-button {
+            background-color: #374151;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navigation-button:hover {
+            background-color: #1f2937;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div id="presentation-container" class="relative">
+
+        <!-- Slide 1: Introduction -->
+        <div id="slide-1" class="slide bg-color-1 active">
+            <div class="card space-y-6">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-800 leading-tight">Ashish Vaswani</h1>
+                <h2 class="text-2xl sm:text-3xl font-semibold text-gray-600">A Transformer Pioneer</h2>
+                <div class="mt-8 flex flex-col items-center">
+                    <img src="https://placehold.co/400x400/9ca3af/ffffff?text=Ashish+Vaswani" alt="Illustration of Ashish Vaswani" class="rounded-full shadow-lg w-40 h-40 object-cover mb-4">
+                    <p class="text-lg text-gray-700">Explore the work of Ashish Vaswani, whose research helped change the field of AI forever.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: The Transformer Model -->
+        <div id="slide-2" class="slide bg-color-2">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">Introducing the Transformer</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://placehold.co/400x300/fca5a5/7f1d1d?text=Transformer+Diagram" alt="Illustration of a Transformer architecture diagram" class="w-full rounded-xl shadow-lg">
+                    </div>
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">In 2017, Ashish Vaswani was the lead author of the paper that introduced the **Transformer** model.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>The Transformer was a new kind of neural network.</li>
+                            <li>Unlike older models, it could process long sequences of data, like sentences, all at once.</li>
+                            <li>This made it much faster and more powerful for tasks like language translation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Attention is All You Need -->
+        <div id="slide-3" class="slide bg-color-3">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">Attention is All You Need</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">The key idea in the paper was a technique called **self-attention.**</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Self-attention allows the model to weigh the importance of different words in a sentence.</li>
+                            <li>For example, when translating a word, the model can "pay attention" to other related words in the sentence.</li>
+                            <li>This was a breakthrough in how AI models understand context and relationships in data.</li>
+                        </ul>
+                        <a href="https://arxiv.org/abs/1706.03762" target="_blank" class="block w-full text-center mt-4">
+                            <div class="resource-link bg-gray-200 p-4 rounded-xl shadow-md text-gray-800 font-semibold flex items-center justify-center">
+                                <span class="mr-2">📝</span> Read the paper
+                            </div>
+                        </a>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/400x300/6b7280/ffffff?text=Self-Attention+Model" alt="Illustration of words connecting with different weights" class="w-full rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: A New Era of AI -->
+        <div id="slide-4" class="slide bg-color-4">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">A New Era of AI</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://placehold.co/400x300/a8a29e/ffffff?text=Modern+AI+Applications" alt="Illustration of chat bots, code, and language translation" class="w-full rounded-xl shadow-lg">
+                    </div>
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">The Transformer architecture became the building block for what we now call **Large Language Models (LLMs).**</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Models like ChatGPT and others are based on this work.</li>
+                            <li>This breakthrough helped power a huge leap forward in natural language processing and generation.</li>
+                            <li>The ability to handle massive amounts of text data efficiently was a game-changer.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Lasting Legacy -->
+        <div id="slide-5" class="slide bg-color-1">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">His Enduring Impact</h2>
+                <p class="text-lg text-gray-700">Ashish Vaswani's work is a cornerstone of today's most powerful AI models.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left space-y-4">
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>His research helped move AI beyond simple tasks to complex language and creativity.</li>
+                            <li>He is one of the key figures responsible for the incredible advancements we see in AI today.</li>
+                            <li>The Transformer model's influence continues to grow, shaping the future of the field.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/400x300/60a5fa/ffffff?text=Connected+Ideas" alt="Illustration of different gears connecting" class="w-full rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4">
+        <button id="prevBtn" class="navigation-button">Previous</button>
+        <button id="nextBtn" class="navigation-button">Next</button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        // Initialize the first slide
+        window.onload = () => {
+            showSlide(currentSlide);
+        };
+    </script>
+</body>
+</html>

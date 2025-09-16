@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbert Simon: The Polymath of AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f8f0; /* Soft green-grey background */
+        }
+        .slide {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            min-height: 100vh;
+            color: #334155;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+        .bg-color-1 { background-color: #e6f1f3; }
+        .bg-color-2 { background-color: #f3e6f1; }
+        .bg-color-3 { background-color: #f1f3e6; }
+        .bg-color-4 { background-color: #e6f3f1; }
+        .card {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 90%;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .icon-container {
+            font-size: 3rem;
+            color: #4b5563;
+        }
+        .resource-link {
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .resource-link:hover {
+            background-color: #d1d5db;
+            transform: scale(1.02);
+        }
+        .navigation-button {
+            background-color: #374151; /* Darker gray */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navigation-button:hover {
+            background-color: #1f2937;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div id="presentation-container" class="relative">
+
+        <!-- Slide 1: Introduction -->
+        <div id="slide-1" class="slide bg-color-1 active">
+            <div class="card space-y-6">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-800 leading-tight">Herbert Simon</h1>
+                <h2 class="text-2xl sm:text-3xl font-semibold text-gray-600">The Polymath of AI</h2>
+                <div class="mt-8 flex flex-col items-center">
+                    <img src="https://placehold.co/400x400/9ca3af/ffffff?text=Herbert+Simon" alt="Illustration of Herbert Simon" class="rounded-full shadow-lg w-40 h-40 object-cover mb-4">
+                    <p class="text-lg text-gray-700">Explore the life and work of Herbert Simon, a pioneer who shaped AI, psychology, and economics.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: A Versatile Mind -->
+        <div id="slide-2" class="slide bg-color-2">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">A Man of Many Fields</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://placehold.co/400x300/fca5a5/7f1d1d?text=Carnegie+Mellon+University" alt="Illustration of Carnegie Mellon University" class="w-full rounded-xl shadow-lg">
+                    </div>
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">Herbert Simon (1916-2001) was a highly influential thinker and researcher.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>He was a professor at **Carnegie Mellon University** for many years.</li>
+                            <li>Simon's work crossed many disciplines, including **AI, cognitive psychology, computer science, and economics.**</li>
+                            <li>He was one of the founding figures of the field of artificial intelligence.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Bounded Rationality -->
+        <div id="slide-3" class="slide bg-color-3">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">Bounded Rationality</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">A key concept Simon introduced is **bounded rationality.**</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>He argued that people don't always make perfectly logical or "rational" decisions.</li>
+                            <li>Instead, our choices are "bounded" by the information we have, our time, and our ability to process that information.</li>
+                            <li>This idea earned him the Nobel Prize in Economics in 1978.</li>
+                        </ul>
+                        <a href="https://en.wikipedia.org/wiki/Bounded_rationality" target="_blank" class="block w-full text-center mt-4">
+                            <div class="resource-link bg-gray-200 p-4 rounded-xl shadow-md text-gray-800 font-semibold flex items-center justify-center">
+                                <span class="mr-2">📚</span> Read more about the theory
+                            </div>
+                        </a>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/400x300/6b7280/ffffff?text=Bounded+Rationality" alt="Illustration of a brain with a gear and a decision tree" class="w-full rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: General Problem Solver -->
+        <div id="slide-4" class="slide bg-color-4">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">General Problem Solver</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://placehold.co/400x300/a8a29e/ffffff?text=General+Problem+Solver" alt="Illustration of a classic computer with a puzzle on the screen" class="w-full rounded-xl shadow-lg">
+                    </div>
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">In AI, Simon and his colleague Allen Newell developed the **General Problem Solver (GPS)**.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>GPS was one of the first programs designed to solve a wide variety of problems.</li>
+                            <li>It used a technique called "means-ends analysis" to figure out the steps needed to reach a goal.</li>
+                            <li>This program was a major milestone in early AI research.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Lasting Legacy -->
+        <div id="slide-5" class="slide bg-color-1">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">His Enduring Legacy</h2>
+                <p class="text-lg text-gray-700">Simon's work continues to influence many fields today.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left space-y-4">
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>His ideas on decision-making are used in management, organizational studies, and psychology.</li>
+                            <li>His contributions to AI on problem-solving and symbolic systems remain foundational.</li>
+                            <li>He is remembered as a true polymath who connected seemingly unrelated fields to better understand human and machine intelligence.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/400x300/60a5fa/ffffff?text=Connected+Ideas" alt="Illustration of different gears connecting" class="w-full rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4">
+        <button id="prevBtn" class="navigation-button">Previous</button>
+        <button id="nextBtn" class="navigation-button">Next</button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        // Initialize the first slide
+        window.onload = () => {
+            showSlide(currentSlide);
+        };
+    </script>
+</body>
+</html>

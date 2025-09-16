@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geoffrey Hinton: The Godfather of AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f8f0; /* Soft green-grey background */
+        }
+        .slide {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            min-height: 100vh;
+            color: #334155;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+        .bg-color-1 { background-color: #e6f1f3; }
+        .bg-color-2 { background-color: #f3e6f1; }
+        .bg-color-3 { background-color: #f1f3e6; }
+        .bg-color-4 { background-color: #e6f3f1; }
+        .card {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 90%;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .icon-container {
+            font-size: 3rem;
+            color: #4b5563;
+        }
+        .resource-link {
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .resource-link:hover {
+            background-color: #d1d5db;
+            transform: scale(1.02);
+        }
+        .navigation-button {
+            background-color: #374151; /* Darker gray */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navigation-button:hover {
+            background-color: #1f2937;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div id="presentation-container" class="relative">
+
+        <!-- Slide 1: Introduction -->
+        <div id="slide-1" class="slide bg-color-1 active">
+            <div class="card space-y-6">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-800 leading-tight">Geoffrey Hinton</h1>
+                <h2 class="text-2xl sm:text-3xl font-semibold text-gray-600">The Godfather of AI</h2>
+                <div class="mt-8 flex flex-col items-center">
+                    <img src="https://placehold.co/400x400/9ca3af/ffffff?text=Geoffrey+Hinton" alt="Illustration of Geoffrey Hinton" class="rounded-full shadow-lg w-40 h-40 object-cover mb-4">
+                    <p class="text-lg text-gray-700">Learn about Geoffrey Hinton, a pioneer of neural networks and a key figure in the rise of deep learning.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Neural Networks & Backpropagation -->
+        <div id="slide-2" class="slide bg-color-2">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">The Power of Backpropagation</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://placehold.co/400x300/fca5a5/7f1d1d?text=Backpropagation+Diagram" alt="Illustration of a neural network with backpropagation" class="w-full rounded-xl shadow-lg">
+                    </div>
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">Hinton is a hero for his work on **backpropagation**, an algorithm that teaches a neural network how to learn.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>It works by calculating the error of the network's output.</li>
+                            <li>Then, it "propagates" that error backward through the network to adjust the connections.</li>
+                            <li>This process is repeated over and over, helping the network get better and better at its task.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: The AI Winter -->
+        <div id="slide-3" class="slide bg-color-3">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">Through the AI Winter</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">Even when interest in neural networks was low, Hinton kept working on them.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>The period in the 1980s and 90s was called the "AI Winter" because of a lack of funding for research.</li>
+                            <li>Hinton and his students persevered, developing new techniques and models, like **Restricted Boltzmann Machines.**</li>
+                            <li>This dedication set the stage for the major breakthroughs that came later.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/400x300/6b7280/ffffff?text=AI+Winter" alt="Illustration of a snowy landscape representing the 'AI Winter'" class="w-full rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: The Deep Learning Revolution -->
+        <div id="slide-4" class="slide bg-color-4">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">The Deep Learning Revolution</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://placehold.co/400x300/a8a29e/ffffff?text=Deep+Learning" alt="Illustration of interconnected layers, representing a deep neural network" class="w-full rounded-xl shadow-lg">
+                    </div>
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">Hinton's work helped trigger the modern **deep learning revolution** in the 2010s.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>With more powerful computers and larger datasets, the neural network models he championed finally reached their full potential.</li>
+                            <li>His research helped create breakthroughs in image recognition, natural language processing, and more.</li>
+                            <li>He received the Turing Award, which is considered the "Nobel Prize of Computing," for his work.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Lasting Legacy -->
+        <div id="slide-5" class="slide bg-color-1">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">His Enduring Impact</h2>
+                <p class="text-lg text-gray-700">Geoffrey Hinton's ideas form the foundation of most modern AI systems.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left space-y-4">
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>His work on deep neural networks is used in everything from phone assistants to self-driving cars.</li>
+                            <li>He continues to be a leading voice in the field, guiding discussions about the future of AI.</li>
+                            <li>His legacy is one of perseverance and a deep belief in the power of learning machines.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/400x300/60a5fa/ffffff?text=AI+Applications" alt="Illustration of various AI applications like phones, cars, and robots" class="w-full rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4">
+        <button id="prevBtn" class="navigation-button">Previous</button>
+        <button id="nextBtn" class="navigation-button">Next</button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        // Initialize the first slide
+        window.onload = () => {
+            showSlide(currentSlide);
+        };
+    </script>
+</body>
+</html>
+
+This file creates a new presentation for you about Geoffrey Hinton's work. It explains his major contributions and his role in shaping the modern field of AI.
+
+Let me know if you would like me to create a presentation for another AI pioneer, or if you'd like to dive deeper into any of Hinton's specific ideas.

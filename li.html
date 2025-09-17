@@ -3,179 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fei-Fei Li: A Pioneer in Computer Vision</title>
+    <title>Fei-Fei Li: The Visionary of Computer Vision</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            @apply bg-gray-900 text-gray-100;
+            background-color: #f0f8f0;
         }
-        .slide-content {
-            @apply p-6 lg:p-12 flex flex-col items-center justify-center min-h-[calc(100vh-8rem)];
-            animation: fadeIn 0.5s ease-in-out;
+        .slide {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            min-height: 100vh;
+            color: #334155;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .slide.active {
+            display: flex;
+            opacity: 1;
         }
-        .slide-button {
-            @apply px-4 py-2 mx-1 lg:mx-2 rounded-lg font-semibold transition-colors duration-200;
+        .bg-color-1 { background-color: #e6f1f3; }
+        .bg-color-2 { background-color: #f3e6f1; }
+        .bg-color-3 { background-color: #f1f3e6; }
+        .bg-color-4 { background-color: #e6f3f1; }
+        .card {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 90%;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .icon-container {
+            font-size: 3rem;
+            color: #4b5563;
+        }
+        .resource-link {
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .resource-link:hover {
+            background-color: #d1d5db;
+            transform: scale(1.02);
+        }
+        .navigation-button {
+            background-color: #374151;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navigation-button:hover {
+            background-color: #1f2937;
+            transform: translateY(-2px);
         }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="bg-gray-100">
 
-    <!-- Header & Navigation -->
-    <header class="w-full bg-gray-800 shadow-lg py-4 px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between sticky top-0 z-50">
-        <h1 class="text-3xl font-bold text-sky-400 mb-2 sm:mb-0">Fei-Fei Li: A Pioneer in AI</h1>
-        <nav class="flex flex-wrap justify-center">
-            <button class="slide-button bg-gray-700 text-gray-100 hover:bg-sky-500 hover:text-white" onclick="showSlide('intro')">Home</button>
-            <button class="slide-button bg-gray-700 text-gray-100 hover:bg-sky-500 hover:text-white" onclick="showSlide('early-life')">Early Life</button>
-            <button class="slide-button bg-gray-700 text-gray-100 hover:bg-sky-500 hover:text-white" onclick="showSlide('contributions')">Contributions</button>
-            <button class="slide-button bg-gray-700 text-gray-100 hover:bg-sky-500 hover:text-white" onclick="showSlide('influence')">Lasting Influence</button>
-        </nav>
-    </header>
+    <div id="presentation-container" class="relative">
 
-    <!-- Main Content Area -->
-    <main class="flex-grow container mx-auto p-4 md:p-8">
-
-        <!-- New Intro Slide -->
-        <div id="intro" class="slide-content text-center">
-            <h2 class="text-5xl font-extrabold mb-4 text-white">Fei-Fei Li</h2>
-            <h3 class="text-3xl font-bold mb-8 text-sky-400">Pioneer of Computer Vision and Human-Centered AI</h3>
-            <p class="text-xl max-w-2xl mx-auto mb-12 text-gray-300">Explore the life, work, and lasting influence of one of the most important figures in the history of artificial intelligence.</p>
-            <button class="px-8 py-4 bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-full text-xl transition-colors duration-200 shadow-md" onclick="showSlide('early-life')">Start Presentation</button>
-        </div>
-        
-        <!-- Slide 1: Early Life and Career -->
-        <div id="early-life" class="slide-content hidden">
-            <h2 class="text-4xl font-bold mb-6 text-center text-orange-400">Early Life & Career</h2>
-            <div class="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8">
-                <div class="flex-shrink-0 w-full md:w-2/3 lg:w-1/2">
-                    <div class="bg-gray-800 p-4 rounded-xl shadow-lg border-2 border-sky-500">
-                        <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Fei-Fei+Li" alt="A placeholder image of Fei-Fei Li" class="w-full rounded-lg mb-4">
-                        <p class="text-gray-400 text-center text-sm">A photo of Dr. Fei-Fei Li. <br> (Image source: Stanford HAI)</p>
-                    </div>
+        <!-- Slide 1: Introduction -->
+        <div id="slide-1" class="slide bg-color-1 active">
+            <div class="card space-y-6">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-800 leading-tight">Fei-Fei Li</h1>
+                <h2 class="text-2xl sm:text-3xl font-semibold text-gray-600">The Visionary of Computer Vision</h2>
+                <div class="mt-8 flex flex-col items-center">
+                    <img src="https://placehold.co/400x400/9ca3af/ffffff?text=Fei-Fei+Li" alt="Illustration of Fei-Fei Li" class="rounded-full shadow-lg w-40 h-40 object-cover mb-4">
+                    <p class="text-lg text-gray-700">Explore the work of Fei-Fei Li, whose vision and dedication transformed the field of computer vision.</p>
                 </div>
-                <div class="flex-grow w-full">
-                    <ul class="space-y-6 list-none p-0">
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-sky-300">An Immigrant's Journey</h3>
-                            <p class="mt-2 text-gray-300">
-                                Born in Beijing, China, Fei-Fei Li moved to the United States with her parents at the age of 15. The family settled in New Jersey, where she faced many challenges, including a new language and culture.
-                            </p>
-                        </li>
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-sky-300">Education at Princeton and Caltech</h3>
-                            <p class="mt-2 text-gray-300">
-                                She earned a scholarship to Princeton University, where she studied physics. She later earned her Ph.D. in electrical engineering from the California Institute of Technology (Caltech), where her interest in computer vision and AI began to blossom.
-                            </p>
-                        </li>
-                    </ul>
-                    <div class="mt-8 text-center">
-                        <a href="https://hai.stanford.edu/people/fei-fei-li" target="_blank" class="inline-block px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-full transition-colors duration-200 shadow-md">
-                            Read Her Stanford Bio
-                        </a>
+            </div>
+        </div>
+
+        <!-- Slide 2: The Challenge of Computer Vision -->
+        <div id="slide-2" class="slide bg-color-2">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">The Challenge of Computer Vision</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://placehold.co/400x300/fca5a5/7f1d1d?text=Image+Recognition" alt="Illustration of a picture with objects labeled" class="w-full rounded-xl shadow-lg">
+                    </div>
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">In the early 2000s, computers struggled to "see" and understand images the way humans do.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>The field of computer vision was stuck, with researchers using small, limited datasets.</li>
+                            <li>The challenge was to get computers to recognize a wide variety of objects.</li>
+                            <li>Li believed that the key was not just better algorithms, but better data.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 2: Major Contributions -->
-        <div id="contributions" class="slide-content hidden">
-            <h2 class="text-4xl font-bold mb-6 text-center text-orange-400">Major Contributions to AI</h2>
-            <div class="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8">
-                <div class="flex-grow w-full">
-                    <ul class="space-y-6 list-none p-0">
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-sky-300">The ImageNet Project</h3>
-                            <p class="mt-2 text-gray-300">
-                                Dr. Li's most significant contribution is the creation of ImageNet. At a time when AI researchers were focused on algorithms, she believed that large-scale, high-quality data was the key to unlocking AI's potential.
-                            </p>
-                        </li>
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-sky-300">Catalyzing the Deep Learning Revolution</h3>
-                            <p class="mt-2 text-gray-300">
-                                ImageNet, a massive database of over 14 million labeled images, provided the data needed to train powerful deep neural networks. The annual ImageNet Challenge became a benchmark for computer vision, accelerating the deep learning revolution and leading to breakthroughs in fields like self-driving cars and medical imaging.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="flex-shrink-0 w-full md:w-2/3 lg:w-1/2">
-                    <div class="bg-gray-800 p-4 rounded-xl shadow-lg border-2 border-sky-500">
-                        <img src="https://placehold.co/600x400/1f2937/d1d5db?text=ImageNet+Concept" alt="A placeholder image of the ImageNet concept" class="w-full rounded-lg mb-4">
-                        <p class="text-gray-400 text-center text-sm">An illustration of how ImageNet provided diverse data for training AI models.</p>
+        <!-- Slide 3: The ImageNet Project -->
+        <div id="slide-3" class="slide bg-color-3">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">The ImageNet Project</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">Fei-Fei Li led the creation of **ImageNet**, a massive dataset of over 14 million images.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Each image was carefully labeled with one of over 20,000 categories.</li>
+                            <li>It was a huge effort that took years and the work of many people.</li>
+                            <li>ImageNet became the standard for training and testing computer vision models.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/400x300/6b7280/ffffff?text=ImageNet+Data" alt="Illustration of many small images on a grid" class="w-full rounded-xl shadow-lg">
                     </div>
                 </div>
             </div>
-            <div class="mt-8 text-center">
-                <a href="https://www.image-net.org/" target="_blank" class="inline-block px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-full transition-colors duration-200 shadow-md">
-                    Explore the ImageNet Project
-                </a>
-            </div>
         </div>
 
-        <!-- Slide 3: Lasting Influence -->
-        <div id="influence" class="slide-content hidden">
-            <h2 class="text-4xl font-bold mb-6 text-center text-orange-400">A Lasting Influence</h2>
-            <div class="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8">
-                <div class="flex-shrink-0 w-full md:w-2/3 lg:w-1/2">
-                    <div class="bg-gray-800 p-4 rounded-xl shadow-lg border-2 border-sky-500">
-                        <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Human-Centered+AI" alt="A placeholder image of a globe and human figures" class="w-full rounded-lg mb-4">
-                        <p class="text-gray-400 text-center text-sm">An image representing the concept of Human-Centered AI.</p>
+        <!-- Slide 4: The Deep Learning Catalyst -->
+        <div id="slide-4" class="slide bg-color-4">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">The Deep Learning Catalyst</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://placehold.co/400x300/a8a29e/ffffff?text=AlexNet+Diagram" alt="Illustration of a deep neural network" class="w-full rounded-xl shadow-lg">
+                    </div>
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">When researchers used ImageNet with **deep neural networks**, the results were incredible.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>The **ImageNet Challenge** showed that deep learning models could outperform previous methods.</li>
+                            <li>This breakthrough, starting in 2012, jump-started the modern AI revolution.</li>
+                            <li>Suddenly, computers could recognize objects and scenes with amazing accuracy.</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="flex-grow w-full">
-                    <ul class="space-y-6 list-none p-0">
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-sky-300">Human-Centered AI</h3>
-                            <p class="mt-2 text-gray-300">
-                                Dr. Li is a leading advocate for "human-centered AI," an approach that prioritizes developing AI systems that augment, rather than replace, human capabilities. She believes AI should be a tool for good that enhances human life and dignity.
-                            </p>
-                        </li>
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-sky-300">The Stanford Institute for Human-Centered AI (HAI)</h3>
-                            <p class="mt-2 text-gray-300">
-                                She co-founded the Stanford Institute for Human-Centered AI (HAI) to lead the research, education, policy, and practice of this field. Her work highlights the importance of ethical considerations, diversity, and public education in the development of AI.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-8 text-center">
-                <a href="https://hai.stanford.edu/" target="_blank" class="inline-block px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-full transition-colors duration-200 shadow-md">
-                    Learn About Stanford HAI
-                </a>
             </div>
         </div>
 
-    </main>
+        <!-- Slide 5: Lasting Legacy -->
+        <div id="slide-5" class="slide bg-color-1">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">Her Enduring Impact</h2>
+                <p class="text-lg text-gray-700">Fei-Fei Li's work showed the importance of data in AI and paved the way for new discoveries.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left space-y-4">
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>She now champions **human-centered AI**, focusing on AI that benefits people and is ethically sound.</li>
+                            <li>Her work is a testament to the power of big data and its role in AI progress.</li>
+                            <li>She is a leading voice in the discussion about AI's role in society.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/400x300/60a5fa/ffffff?text=AI+and+Society" alt="Illustration of AI and humanity in harmony" class="w-full rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4">
+        <button id="prevBtn" class="navigation-button">Previous</button>
+        <button id="nextBtn" class="navigation-button">Next</button>
+    </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Show the intro slide on page load
-            showSlide('intro');
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
         });
 
-        // Function to show a specific slide and hide the others
-        function showSlide(slideId) {
-            // Get all slide elements
-            const slides = document.querySelectorAll('.slide-content');
-            
-            // Hide all slides
-            slides.forEach(slide => {
-                slide.classList.add('hidden');
-            });
-            
-            // Show the selected slide
-            const selectedSlide = document.getElementById(slideId);
-            if (selectedSlide) {
-                selectedSlide.classList.remove('hidden');
-            }
-        }
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        // Initialize the first slide
+        window.onload = () => {
+            showSlide(currentSlide);
+        };
     </script>
 </body>
 </html>

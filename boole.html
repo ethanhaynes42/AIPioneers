@@ -3,180 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>George Boole: The Father of the Digital Age</title>
-    <!-- Tailwind CSS CDN for styling -->
+    <title>George Boole: The Father of Digital Logic</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #f0f8f0;
         }
         .slide {
-            transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
-            opacity: 0;
-            transform: scale(0.95);
-            pointer-events: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
+            display: none;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding: 2rem;
+            min-height: 100vh;
+            color: #334155;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
-        .slide.active-slide {
+        .slide.active {
+            display: flex;
             opacity: 1;
-            transform: scale(1);
-            pointer-events: auto;
+        }
+        .bg-color-1 { background-color: #e6f1f3; }
+        .bg-color-2 { background-color: #f3e6f1; }
+        .bg-color-3 { background-color: #f1f3e6; }
+        .bg-color-4 { background-color: #e6f3f1; }
+        .card {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 90%;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .icon-container {
+            font-size: 3rem;
+            color: #4b5563;
+        }
+        .resource-link {
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .resource-link:hover {
+            background-color: #d1d5db;
+            transform: scale(1.02);
+        }
+        .navigation-button {
+            background-color: #374151;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navigation-button:hover {
+            background-color: #1f2937;
+            transform: translateY(-2px);
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4">
-    <div id="presentation-container" class="relative w-full max-w-4xl h-[70vh] bg-gray-800 rounded-xl shadow-2xl overflow-hidden flex flex-col justify-between p-8">
+<body class="bg-gray-100">
+
+    <div id="presentation-container" class="relative">
 
         <!-- Slide 1: Introduction -->
-        <div id="slide-1" class="slide active-slide p-8">
-            <div class="text-center">
-                <h1 class="text-5xl md:text-6xl font-bold mb-4">George Boole: The Father of the Digital Age</h1>
-                <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">Discover the mathematician and logician whose work laid the foundation for modern computing and the information age.</p>
-                <img src="https://placehold.co/400x400/1e293b/d1d5db?text=George+Boole" alt="A portrait of George Boole" class="mt-8 rounded-full shadow-lg mx-auto">
-            </div>
-        </div>
-
-        <!-- Slide 2: Early Life and Education -->
-        <div id="slide-2" class="slide p-8">
-            <div class="text-center">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">The Self-Taught Genius</h2>
-                <ul class="text-lg md:text-xl text-gray-300 space-y-3 list-disc list-inside max-w-2xl mx-auto text-left">
-                    <li>Born in Lincoln, England, on November 2, 1815, to a shoemaker.</li>
-                    <li>Had very little formal education and was largely self-taught in mathematics and languages.</li>
-                    <li>By the age of 16, he became the primary financial provider for his family, working as a junior teacher.</li>
-                    <li>He opened his own school in Lincoln at age 19.</li>
-                    <li>Despite his lack of a university degree, he began publishing original mathematical papers and gained recognition.</li>
-                </ul>
-                <img src="https://placehold.co/500x300/1e293b/d1d5db?text=Schoolroom+from+the+1800s" alt="An illustration of a schoolroom from the 1800s" class="mt-8 rounded-lg shadow-lg mx-auto">
-            </div>
-        </div>
-
-        <!-- Slide 3: Major Contributions -->
-        <div id="slide-3" class="slide p-8">
-            <div class="text-center">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Major Contributions: A New Kind of Algebra</h2>
-                <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">Boole's most famous work, "An Investigation of the Laws of Thought," introduced a system of symbolic logic known as **Boolean algebra**.</p>
-                <div class="flex flex-col items-center mt-6 space-y-4">
-                    <img src="https://placehold.co/400x250/1e293b/d1d5db?text=Boolean+Logic+Diagram" alt="A diagram representing Boolean logic" class="rounded-lg shadow-lg">
-                    <p class="text-md text-gray-400">This system used variables with only two values: `true` (1) or `false` (0).</p>
-                    <a href="https://example.com/boole-logic-video" target="_blank" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow-lg transition duration-300">
-                        Watch a video about Boolean Logic →
-                    </a>
+        <div id="slide-1" class="slide bg-color-1 active">
+            <div class="card space-y-6">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-800 leading-tight">George Boole</h1>
+                <h2 class="text-2xl sm:text-3xl font-semibold text-gray-600">The Father of Digital Logic</h2>
+                <div class="mt-8 flex flex-col items-center">
+                    <img src="https://placehold.co/400x400/9ca3af/ffffff?text=George+Boole" alt="Illustration of George Boole" class="rounded-full shadow-lg w-40 h-40 object-cover mb-4">
+                    <p class="text-lg text-gray-700">Explore the work of George Boole, whose ideas created the foundation for modern computing.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 4: Influence on Digital Computing -->
-        <div id="slide-4" class="slide p-8">
-            <div class="text-center">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">From Logic to Circuits</h2>
-                <ul class="text-lg md:text-xl text-gray-300 space-y-3 list-disc list-inside max-w-2xl mx-auto text-left">
-                    <li>Boole's work remained theoretical for nearly a century.</li>
-                    <li>In 1937, Claude Shannon realized Boolean algebra could simplify electrical circuits.</li>
-                    <li>Shannon's thesis showed switches could represent `true` or `false` states, a key insight that led to digital circuits.</li>
-                </ul>
-                <div class="flex flex-col items-center mt-6 space-y-4">
-                    <img src="https://placehold.co/500x300/1e293b/d1d5db?text=Claude+Shannon+and+Circuit" alt="A photo of Claude Shannon with a diagram of an electrical circuit" class="rounded-lg shadow-lg">
-                    <a href="https://example.com/shannon-thesis" target="_blank" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow-lg transition duration-300">
-                        Learn more about Shannon's Thesis →
-                    </a>
+        <!-- Slide 2: The Laws of Thought -->
+        <div id="slide-2" class="slide bg-color-2">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">The Laws of Thought</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://placehold.co/400x300/fca5a5/7f1d1d?text=Boolean+Algebra" alt="Illustration of mathematical symbols and a truth table" class="w-full rounded-xl shadow-lg">
+                    </div>
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">In his 1854 book, **The Laws of Thought**, Boole introduced a new form of mathematics called **Boolean algebra**.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>This system is based on just two values: true (1) and false (0).</li>
+                            <li>He showed how to use math to solve problems of logic.</li>
+                            <li>This was a revolutionary idea that connected logic and algebra in a completely new way.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 5: Boole's Legacy in Modern AI -->
-        <div id="slide-5" class="slide p-8">
-            <div class="text-center">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">The Foundation of Modern AI</h2>
-                <ul class="text-lg md:text-xl text-gray-300 space-y-3 list-disc list-inside max-w-2xl mx-auto text-left">
-                    <li>Boolean logic is the foundation of all digital technology, including AI.</li>
-                    <li>Every command and decision in a computer is based on the binary logic of `1`s and `0`s.</li>
-                    <li>AI systems, from simple decision trees to complex neural networks, rely on logical operations to process information.</li>
-                    <li>The work of his great-great-grandson, Geoffrey Hinton, one of the "godfathers of AI," further links his family's legacy to the field.</li>
-                </ul>
-                <div class="flex flex-col items-center mt-6 space-y-4">
-                    <img src="https://placehold.co/400x250/1e293b/d1d5db?text=AI+Circuit+Board" alt="An image of a modern circuit board" class="rounded-lg shadow-lg">
-                    <a href="https://example.com/hinton-ai-article" target="_blank" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow-lg transition duration-300">
-                        Read about Geoffrey Hinton's work →
-                    </a>
+        <!-- Slide 3: The Building Blocks of Computers -->
+        <div id="slide-3" class="slide bg-color-3">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">The Building Blocks of Computers</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">Boole's work on logic and algebra became the foundation for the **digital circuit**.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Every computer works using simple on/off switches (1s and 0s).</li>
+                            <li>The operations of AND, OR, and NOT from Boolean algebra directly relate to the logic gates that control these switches.</li>
+                            <li>This is why his work is seen as the blueprint for all electronic devices.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/400x300/6b7280/ffffff?text=Logic+Gates" alt="Illustration of a simple logic circuit with gates" class="w-full rounded-xl shadow-lg">
+                    </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Slide 6: Conclusion -->
-        <div id="slide-6" class="slide p-8">
-            <div class="text-center">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">A Lasting Legacy</h2>
-                <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">George Boole's theoretical work in the 19th century became the fundamental language of the 21st century's digital world. Without Boolean logic, there would be no computers, no internet, and no modern artificial intelligence.</p>
-                <img src="https://placehold.co/400x300/1e293b/d1d5db?text=Digital+Future" alt="A stylized image representing the digital age" class="mt-8 rounded-lg shadow-lg mx-auto">
+
+        <!-- Slide 4: The Digital Revolution -->
+        <div id="slide-4" class="slide bg-color-4">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">The Digital Revolution</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://placehold.co/400x300/a8a29e/ffffff?text=Digital+Age" alt="Illustration of a computer chip and digital symbols" class="w-full rounded-xl shadow-lg">
+                    </div>
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">Over 100 years after his death, engineers and computer scientists realized the power of his ideas.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>His work became the theoretical basis for creating programmable electronic computers.</li>
+                            <li>Without Boolean algebra, we would not have the computers, smartphones, or video games we have today.</li>
+                            <li>He turned abstract logical ideas into a practical system that powers our modern world.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <!-- Navigation Buttons -->
-        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-4 z-10">
-            <button id="prev-btn" class="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-full shadow-lg transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
-                Previous
-            </button>
-            <button id="next-btn" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow-lg transition duration-300">
-                Next
-            </button>
+
+        <!-- Slide 5: Lasting Legacy -->
+        <div id="slide-5" class="slide bg-color-1">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">His Enduring Impact</h2>
+                <p class="text-lg text-gray-700">George Boole's legacy is immense and foundational to computer science.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left space-y-4">
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>He is the reason we use the terms "true" and "false" in programming.</li>
+                            <li>His algebra is the very language that computers speak at the most basic level.</li>
+                            <li>His work is a prime example of how abstract mathematical ideas can lead to revolutionary technology.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/400x300/60a5fa/ffffff?text=Logic+and+Math" alt="Illustration of logic and math symbols connected" class="w-full rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </div>
         </div>
-        
+
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4">
+        <button id="prevBtn" class="navigation-button">Previous</button>
+        <button id="nextBtn" class="navigation-button">Next</button>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const slides = document.querySelectorAll('.slide');
-            const prevBtn = document.getElementById('prev-btn');
-            const nextBtn = document.getElementById('next-btn');
-            let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
 
-            // Function to update button state
-            const updateButtons = () => {
-                prevBtn.disabled = currentSlideIndex === 0;
-                nextBtn.disabled = currentSlideIndex === slides.length - 1;
-            };
-
-            // Function to show a specific slide
-            const showSlide = (index) => {
-                slides.forEach((slide, i) => {
-                    slide.classList.remove('active-slide');
-                    if (i === index) {
-                        slide.classList.add('active-slide');
-                    }
-                });
-                updateButtons();
-            };
-
-            // Event listener for the "Next" button
-            nextBtn.addEventListener('click', () => {
-                if (currentSlideIndex < slides.length - 1) {
-                    currentSlideIndex++;
-                    showSlide(currentSlideIndex);
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
                 }
             });
+        }
 
-            // Event listener for the "Previous" button
-            prevBtn.addEventListener('click', () => {
-                if (currentSlideIndex > 0) {
-                    currentSlideIndex--;
-                    showSlide(currentSlideIndex);
-                }
-            });
-
-            // Show the first slide on page load
-            showSlide(currentSlideIndex);
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
         });
-    </script>
 
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        // Initialize the first slide
+        window.onload = () => {
+            showSlide(currentSlide);
+        };
+    </script>
 </body>
 </html>
+

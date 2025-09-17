@@ -3,182 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arthur Samuel: AI Pioneer</title>
+    <title>Arthur Samuel: The AI Learning Pioneer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            @apply bg-gray-900 text-gray-100;
+            background-color: #f0f8f0;
         }
-        .slide-content {
-            @apply p-6 lg:p-12;
-            animation: fadeIn 0.5s ease-in-out;
+        .slide {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            min-height: 100vh;
+            color: #334155;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .slide.active {
+            display: flex;
+            opacity: 1;
         }
-        .slide-button {
-            @apply px-4 py-2 mx-1 lg:mx-2 rounded-lg font-semibold transition-colors duration-200;
+        .bg-color-1 { background-color: #e6f1f3; }
+        .bg-color-2 { background-color: #f3e6f1; }
+        .bg-color-3 { background-color: #f1f3e6; }
+        .bg-color-4 { background-color: #e6f3f1; }
+        .card {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 90%;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .icon-container {
+            font-size: 3rem;
+            color: #4b5563;
+        }
+        .resource-link {
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .resource-link:hover {
+            background-color: #d1d5db;
+            transform: scale(1.02);
+        }
+        .navigation-button {
+            background-color: #374151;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navigation-button:hover {
+            background-color: #1f2937;
+            transform: translateY(-2px);
         }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="bg-gray-100">
 
-    <!-- Header & Navigation -->
-    <header class="w-full bg-gray-800 shadow-lg py-4 px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between sticky top-0 z-50">
-        <h1 class="text-3xl font-bold text-teal-400 mb-2 sm:mb-0">Arthur Samuel: An AI Pioneer</h1>
-        <nav class="flex flex-wrap justify-center">
-            <button class="slide-button bg-gray-700 text-gray-100 hover:bg-teal-500 hover:text-white" onclick="showSlide('early-life')">Early Life</button>
-            <button class="slide-button bg-gray-700 text-gray-100 hover:bg-teal-500 hover:text-white" onclick="showSlide('contributions')">Contributions</button>
-            <button class="slide-button bg-gray-700 text-gray-100 hover:bg-teal-500 hover:text-white" onclick="showSlide('influence')">Modern Influence</button>
-        </nav>
-    </header>
+    <div id="presentation-container" class="relative">
 
-    <!-- Main Content Area -->
-    <main class="flex-grow container mx-auto p-4 md:p-8">
-
-        <!-- Slide 1: Early Life and Career -->
-        <div id="early-life" class="slide-content">
-            <h2 class="text-4xl font-bold mb-6 text-center text-orange-400">Early Life & Career</h2>
-            <div class="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8">
-                <div class="flex-shrink-0 w-full md:w-2/3 lg:w-1/2">
-                    <div class="bg-gray-800 p-4 rounded-xl shadow-lg border-2 border-teal-500">
-                        <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Arthur+Samuel" alt="A placeholder image for Arthur Samuel" class="w-full rounded-lg mb-4">
-                        <p class="text-gray-400 text-center text-sm">A photo of Arthur Samuel with an IBM computer. <br> (Image source: Computer History Museum)</p>
-                    </div>
+        <!-- Slide 1: Introduction -->
+        <div id="slide-1" class="slide bg-color-1 active">
+            <div class="card space-y-6">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-800 leading-tight">Arthur Samuel</h1>
+                <h2 class="text-2xl sm:text-3xl font-semibold text-gray-600">The AI Learning Pioneer</h2>
+                <div class="mt-8 flex flex-col items-center">
+                    <img src="https://placehold.co/400x400/9ca3af/ffffff?text=Arthur+Samuel" alt="Illustration of Arthur Samuel" class="rounded-full shadow-lg w-40 h-40 object-cover mb-4">
+                    <p class="text-lg text-gray-700">Explore the work of Arthur Samuel, a pioneer who taught machines how to learn on their own.</p>
                 </div>
-                <div class="flex-grow w-full">
-                    <ul class="space-y-6 list-none p-0">
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-teal-300">Biography</h3>
-                            <p class="mt-2 text-gray-300">
-                                Arthur Lee Samuel was born on December 5, 1901, in Emporia, Kansas. He earned a bachelor's degree from the College of Emporia in 1923 and a master's degree in Electrical Engineering from MIT in 1926.
-                            </p>
-                        </li>
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-teal-300">Distinguished Career</h3>
-                            <p class="mt-2 text-gray-300">
-                                Before his groundbreaking work in AI, Samuel had a varied career as an electrical engineer. He worked at Bell Telephone Laboratories, where he contributed to radar improvements during World War II. He later joined IBM in 1949, where he would go on to develop his famous checkers-playing program.
-                            </p>
-                        </li>
-                    </ul>
-                    <div class="mt-8 text-center">
-                        <a href="https://www.computerhistory.org/collections/catalog/102717088" target="_blank" class="inline-block px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-full transition-colors duration-200 shadow-md">
-                            View Historical Image
-                        </a>
+            </div>
+        </div>
+
+        <!-- Slide 2: The Checkers-Playing Program -->
+        <div id="slide-2" class="slide bg-color-2">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">The Checkers-Playing Program</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://placehold.co/400x300/fca5a5/7f1d1d?text=Checkers+Game" alt="Illustration of a checkers board" class="w-full rounded-xl shadow-lg">
+                    </div>
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">In the 1950s, Samuel created a program that played the game of **checkers**.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>At first, the program was not very good at the game.</li>
+                            <li>But as it played against human opponents, it began to improve.</li>
+                            <li>Samuel's program eventually became so good that it could beat him!</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 2: Major Contributions to AI -->
-        <div id="contributions" class="slide-content hidden">
-            <h2 class="text-4xl font-bold mb-6 text-center text-orange-400">Major Contributions to AI</h2>
-            <div class="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8">
-                <div class="flex-grow w-full">
-                    <ul class="space-y-6 list-none p-0">
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-teal-300">Pioneering "Machine Learning"</h3>
-                            <p class="mt-2 text-gray-300">
-                                Samuel is credited with popularizing the term "machine learning" in his 1959 paper, defining it as "the field of study that gives computers the ability to learn without being explicitly programmed." This laid the conceptual groundwork for the entire field.
-                            </p>
-                        </li>
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-teal-300">The Checkers-Playing Program</h3>
-                            <p class="mt-2 text-gray-300">
-                                Samuel's most significant contribution was the development of a checkers program in the early 1950s. It was one of the first successful self-learning programs, designed to improve its own performance through experience.
-                            </p>
-                        </li>
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-teal-300">Groundbreaking Techniques</h3>
-                            <p class="mt-2 text-gray-300">
-                                His program pioneered several key AI techniques, including <strong>Heuristic Search</strong> and <strong>Reinforcement Learning</strong>, where the program learned from its mistakes by adjusting its internal scoring functions based on whether a move led to a win or a loss.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="flex-shrink-0 w-full md:w-2/3 lg:w-1/2">
-                    <div class="bg-gray-800 p-4 rounded-xl shadow-lg border-2 border-teal-500">
-                        <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Checkers+Board" alt="A placeholder image of a checkers board" class="w-full rounded-lg mb-4">
-                        <p class="text-gray-400 text-center text-sm">A simple checkers board illustration, the game that was the subject of Samuel's pioneering work.</p>
+        <!-- Slide 3: Learning by Rote -->
+        <div id="slide-3" class="slide bg-color-3">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">Learning by Rote</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">Samuel's program learned in a very clever way called **"learning by rote."**</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>It memorized the board positions it had seen before and which moves were successful.</li>
+                            <li>When it saw a familiar position, it would choose the move that led to a win in the past.</li>
+                            <li>This simple idea was a big step toward getting machines to learn from experience.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/400x300/6b7280/ffffff?text=Learning+Concept" alt="Illustration of a brain with a lightbulb" class="w-full rounded-xl shadow-lg">
                     </div>
                 </div>
             </div>
-            <div class="mt-8 text-center">
-                <a href="https://aivips.org/arthur-samuel/" target="_blank" class="inline-block px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-full transition-colors duration-200 shadow-md">
-                    Read an Article on Samuel's Legacy
-                </a>
-            </div>
         </div>
 
-        <!-- Slide 3: Influence on Modern AI -->
-        <div id="influence" class="slide-content hidden">
-            <h2 class="text-4xl font-bold mb-6 text-center text-orange-400">Influence on Modern AI</h2>
-            <div class="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8">
-                <div class="flex-shrink-0 w-full md:w-2/3 lg:w-1/2">
-                    <div class="bg-gray-800 p-4 rounded-xl shadow-lg border-2 border-teal-500">
-                        <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Modern+AI+Illustration" alt="A placeholder image illustrating modern AI" class="w-full rounded-lg mb-4">
-                        <p class="text-gray-400 text-center text-sm">A conceptual illustration of a modern AI system, inspired by Samuel's work.</p>
+        <!-- Slide 4: Generalization -->
+        <div id="slide-4" class="slide bg-color-4">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">Generalization</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://placehold.co/400x300/a8a29e/ffffff?text=Generalization+Example" alt="Illustration of a puzzle piece fitting into a larger picture" class="w-full rounded-xl shadow-lg">
+                    </div>
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">The program also learned by **generalization**.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>It looked at the features of a board position, like how many pieces each side had.</li>
+                            <li>It learned which features were important for winning, so it could make good guesses on new board positions.</li>
+                            <li>This ability to apply knowledge to new situations is a key part of modern machine learning.</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="flex-grow w-full">
-                    <ul class="space-y-6 list-none p-0">
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-teal-300">Foundation of Machine Learning</h3>
-                            <p class="mt-2 text-gray-300">
-                                Samuel's vision of a machine that could learn from experience without constant human intervention is now a reality in countless applications, from recommendation engines to natural language processing.
-                            </p>
-                        </li>
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-teal-300">Games as a Testbed</h3>
-                            <p class="mt-2 text-gray-300">
-                                The use of games to test and advance AI is a direct legacy of Samuel's work. Games provide a structured, yet complex environment for developing and evaluating AI algorithms.
-                            </p>
-                        </li>
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-teal-300">Pioneering Algorithms</h3>
-                            <p class="mt-2 text-gray-300">
-                                The principles of heuristic search and reinforcement learning that Samuel developed are still fundamental to many modern AI systems, including those used in robotics, self-driving cars, and game-playing AIs.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-8 text-center">
-                <a href="https://www.youtube.com/watch?v=F0f-90e9iFo" target="_blank" class="inline-block px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-full transition-colors duration-200 shadow-md">
-                    Watch a Video on Samuel's Legacy
-                </a>
             </div>
         </div>
 
-    </main>
+        <!-- Slide 5: Lasting Legacy -->
+        <div id="slide-5" class="slide bg-color-1">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">His Enduring Impact</h2>
+                <p class="text-lg text-gray-700">Arthur Samuel's work is considered one of the earliest examples of machine learning.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left space-y-4">
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>He was one of the first people to use the term "**machine learning**."</li>
+                            <li>His checkers program showed that a computer could learn a complex task without being explicitly programmed for every move.</li>
+                            <li>This was a monumental step that laid the groundwork for today's AI systems.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/400x300/60a5fa/ffffff?text=AI+Learning" alt="Illustration of a robot hand helping a human hand" class="w-full rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4">
+        <button id="prevBtn" class="navigation-button">Previous</button>
+        <button id="nextBtn" class="navigation-button">Next</button>
+    </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Show the first slide on page load
-            showSlide('early-life');
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
         });
 
-        // Function to show a specific slide and hide the others
-        function showSlide(slideId) {
-            // Get all slide elements
-            const slides = document.querySelectorAll('.slide-content');
-            
-            // Hide all slides
-            slides.forEach(slide => {
-                slide.classList.add('hidden');
-            });
-            
-            // Show the selected slide
-            const selectedSlide = document.getElementById(slideId);
-            if (selectedSlide) {
-                selectedSlide.classList.remove('hidden');
-            }
-        }
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        // Initialize the first slide
+        window.onload = () => {
+            showSlide(currentSlide);
+        };
     </script>
 </body>
 </html>
+

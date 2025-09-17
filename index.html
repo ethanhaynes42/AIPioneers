@@ -1,10 +1,235 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>My Awesome Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pioneers of Artificial Intelligence</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff; /* Light blue background */
+            color: #333;
+        }
+        header {
+            background-color: #004d99; /* Dark blue header */
+            color: white;
+            padding: 2em;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+        .container {
+            width: 80%;
+            margin: 2em auto;
+            padding: 2em;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .intro-section {
+            text-align: center;
+            margin-bottom: 2em;
+            line-height: 1.6;
+        }
+        .pioneers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2em;
+            padding: 1em;
+        }
+        .pioneer-card {
+            background-color: #e6f2ff; /* Lighter blue card background */
+            border: 1px solid #b3d9ff;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1em;
+        }
+        .pioneer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .pioneer-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1em;
+            border: 4px solid #004d99;
+        }
+        .pioneer-info {
+            flex-grow: 1;
+            padding: 0 1em;
+        }
+        .pioneer-info h3 {
+            margin: 0.5em 0;
+            color: #003366;
+        }
+        .pioneer-info p {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 1em;
+        }
+        .pioneer-button {
+            display: inline-block;
+            padding: 0.75em 1.5em;
+            background-color: #ff6347; /* Tomato color for the button */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: auto; /* Pushes the button to the bottom */
+        }
+        .pioneer-button:hover {
+            background-color: #e5533d;
+        }
+    </style>
 </head>
 <body>
-<h1>Hello, World!</h1>
-<p>Welcome to my first GitHub Pages website.</p>
+
+    <header>
+        <h1>The Pioneers of Artificial Intelligence</h1>
+    </header>
+
+    <div class="container">
+        <section class="intro-section">
+            <p>
+                An AI pioneer is an innovator whose foundational work has significantly shaped the field of artificial intelligence. These brilliant minds, from early mathematicians to modern-day computer scientists, laid the groundwork for the algorithms, theories, and systems that power today's intelligent machines. Their contributions represent critical milestones in the journey to understand and replicate human-like intelligence, from the abstract logic of computation to the complex models of machine learning.
+            </p>
+        </section>
+
+        <section class="pioneers-grid">
+            <!-- Al-Khwarizmi -->
+            <div class="pioneer-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Muhammad_ibn_Musa_al-Khwarizmi_by_Mohammad_Fahmi_Hassan.jpg/220px-Muhammad_ibn_Musa_al-Khwarizmi_by_Mohammad_Fahmi_Hassan.jpg" alt="Picture of Al-Khwarizmi">
+                <div class="pioneer-info">
+                    <h3>Al-Khwarizmi</h3>
+                    <p>c. 780 – c. 850 CE</p>
+                    <a href="khwarizimi.html" class="pioneer-button">Learn More</a>
+                </div>
+            </div>
+
+            <!-- George Boole -->
+            <div class="pioneer-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/George_Boole_portrait_by_Belfast_Photo_Company.jpg/220px-George_Boole_portrait_by_Belfast_Photo_Company.jpg" alt="Picture of George Boole">
+                <div class="pioneer-info">
+                    <h3>George Boole</h3>
+                    <p>1815 – 1864</p>
+                    <a href="boole.html" class="pioneer-button">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Alan Turing -->
+            <div class="pioneer-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Alan_Turing_at_Bletchley_Park_1945.jpg/220px-Alan_Turing_at_Bletchley_Park_1945.jpg" alt="Picture of Alan Turing">
+                <div class="pioneer-info">
+                    <h3>Alan Turing</h3>
+                    <p>1912 – 1954</p>
+                    <a href="turing.html" class="pioneer-button">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Arthur Samuel -->
+            <div class="pioneer-card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Arthur_Samuel_headshot.jpg/220px-Arthur_Samuel_headshot.jpg" alt="Picture of Arthur Samuel">
+                <div class="pioneer-info">
+                    <h3>Arthur Samuel</h3>
+                    <p>1905 – 1990</p>
+                    <a href="samuel.html" class="pioneer-button">Learn More</a>
+                </div>
+            </div>
+
+            <!-- John McCarthy -->
+            <div class="pioneer-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/John_McCarthy_Stanford.jpg/220px-John_McCarthy_Stanford.jpg" alt="Picture of John McCarthy">
+                <div class="pioneer-info">
+                    <h3>John McCarthy</h3>
+                    <p>1927 – 2011</p>
+                    <a href="mccarthy.html" class="pioneer-button">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Allen Newell -->
+            <div class="pioneer-card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Allen_Newell.jpg/220px-Allen_Newell.jpg" alt="Picture of Allen Newell">
+                <div class="pioneer-info">
+                    <h3>Allen Newell</h3>
+                    <p>1927 – 1992</p>
+                    <a href="newell.html" class="pioneer-button">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Herbert Simon -->
+            <div class="pioneer-card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1a/Herbert_Simon.jpg/220px-Herbert_Simon.jpg" alt="Picture of Herbert Simon">
+                <div class="pioneer-info">
+                    <h3>Herbert Simon</h3>
+                    <p>1916 – 2001</p>
+                    <a href="simon.html" class="pioneer-button">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Marvin Minsky -->
+            <div class="pioneer-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Marvin_Minsky_1994.jpg/220px-Marvin_Minsky_1994.jpg" alt="Picture of Marvin Minsky">
+                <div class="pioneer-info">
+                    <h3>Marvin Minsky</h3>
+                    <p>1927 – 2016</p>
+                    <a href="minsky.html" class="pioneer-button">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Joseph Weizenbaum -->
+            <div class="pioneer-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Joseph_Weizenbaum_%28cropped%29.jpg/220px-Joseph_Weizenbaum_%28cropped%29.jpg" alt="Picture of Joseph Weizenbaum">
+                <div class="pioneer-info">
+                    <h3>Joseph Weizenbaum</h3>
+                    <p>1923 – 2008</p>
+                    <a href="weizenbaum.html" class="pioneer-button">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Geoffrey Hinton -->
+            <div class="pioneer-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Geoffrey_Hinton.jpg/220px-Geoffrey_Hinton.jpg" alt="Picture of Geoffrey Hinton">
+                <div class="pioneer-info">
+                    <h3>Geoffrey Hinton</h3>
+                    <p>b. 1947</p>
+                    <a href="hinton.html" class="pioneer-button">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Fei-Fei Li -->
+            <div class="pioneer-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Fei-Fei_Li_2020.jpg/220px-Fei-Fei_Li_2020.jpg" alt="Picture of Fei-Fei Li">
+                <div class="pioneer-info">
+                    <h3>Fei-Fei Li</h3>
+                    <p>b. 1976</p>
+                    <a href="li.html" class="pioneer-button">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Ashish Vaswani -->
+            <div class="pioneer-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Ashish_Vaswani_2022.jpg/220px-Ashish_Vaswani_2022.jpg" alt="Picture of Ashish Vaswani">
+                <div class="pioneer-info">
+                    <h3>Ashish Vaswani</h3>
+                    <p>fl. 2017 – Present</p>
+                    <a href="vaswani.html" class="pioneer-button">Learn More</a>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
 </body>
 </html>

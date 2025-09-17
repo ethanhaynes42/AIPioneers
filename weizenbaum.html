@@ -3,170 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joseph Weizenbaum: A Critical Voice in AI</title>
+    <title>Joseph Weizenbaum: The Conscience of Computing</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            @apply bg-gray-900 text-gray-100;
+            background-color: #f0f8f0;
         }
-        .slide-content {
-            @apply p-6 lg:p-12;
-            animation: fadeIn 0.5s ease-in-out;
+        .slide {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            min-height: 100vh;
+            color: #334155;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .slide.active {
+            display: flex;
+            opacity: 1;
         }
-        .slide-button {
-            @apply px-4 py-2 mx-1 lg:mx-2 rounded-lg font-semibold transition-colors duration-200;
+        .bg-color-1 { background-color: #e6f1f3; }
+        .bg-color-2 { background-color: #f3e6f1; }
+        .bg-color-3 { background-color: #f1f3e6; }
+        .bg-color-4 { background-color: #e6f3f1; }
+        .card {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 90%;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .icon-container {
+            font-size: 3rem;
+            color: #4b5563;
+        }
+        .resource-link {
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .resource-link:hover {
+            background-color: #d1d5db;
+            transform: scale(1.02);
+        }
+        .navigation-button {
+            background-color: #374151;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navigation-button:hover {
+            background-color: #1f2937;
+            transform: translateY(-2px);
         }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="bg-gray-100">
 
-    <!-- Header & Navigation -->
-    <header class="w-full bg-gray-800 shadow-lg py-4 px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between sticky top-0 z-50">
-        <h1 class="text-3xl font-bold text-teal-400 mb-2 sm:mb-0">Joseph Weizenbaum: A Critical Voice</h1>
-        <nav class="flex flex-wrap justify-center">
-            <button class="slide-button bg-gray-700 text-gray-100 hover:bg-teal-500 hover:text-white" onclick="showSlide('early-life')">Early Life</button>
-            <button class="slide-button bg-gray-700 text-gray-100 hover:bg-teal-500 hover:text-white" onclick="showSlide('contributions')">Contributions</button>
-            <button class="slide-button bg-gray-700 text-gray-100 hover:bg-teal-500 hover:text-white" onclick="showSlide('influence')">Lasting Influence</button>
-        </nav>
-    </header>
+    <div id="presentation-container" class="relative">
 
-    <!-- Main Content Area -->
-    <main class="flex-grow container mx-auto p-4 md:p-8">
-
-        <!-- Slide 1: Early Life and Career -->
-        <div id="early-life" class="slide-content">
-            <h2 class="text-4xl font-bold mb-6 text-center text-orange-400">Early Life & Career</h2>
-            <div class="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8">
-                <div class="flex-shrink-0 w-full md:w-2/3 lg:w-1/2">
-                    <div class="bg-gray-800 p-4 rounded-xl shadow-lg border-2 border-teal-500">
-                        <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Joseph+Weizenbaum" alt="A placeholder image of Joseph Weizenbaum" class="w-full rounded-lg mb-4">
-                        <p class="text-gray-400 text-center text-sm">A photo of Joseph Weizenbaum. <br> (Image source: Weizenbaum Institute)</p>
-                    </div>
+        <!-- Slide 1: Introduction -->
+        <div id="slide-1" class="slide bg-color-1 active">
+            <div class="card space-y-6">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-800 leading-tight">Joseph Weizenbaum</h1>
+                <h2 class="text-2xl sm:text-3xl font-semibold text-gray-600">The Conscience of Computing</h2>
+                <div class="mt-8 flex flex-col items-center">
+                    <img src="https://placehold.co/400x400/9ca3af/ffffff?text=Joseph+Weizenbaum" alt="Illustration of Joseph Weizenbaum" class="rounded-full shadow-lg w-40 h-40 object-cover mb-4">
+                    <p class="text-lg text-gray-700">Learn about Joseph Weizenbaum, a pioneer who challenged us to think about the ethics of AI.</p>
                 </div>
-                <div class="flex-grow w-full">
-                    <ul class="space-y-6 list-none p-0">
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-teal-300">A Life Shaped by History</h3>
-                            <p class="mt-2 text-gray-300">
-                                Joseph Weizenbaum was born in Berlin, Germany, on January 8, 1923. He and his Jewish family were forced to flee the Nazi regime in 1936, immigrating to the United States. This experience deeply influenced his later work and ethical concerns about technology.
-                            </p>
-                        </li>
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-teal-300">Career at MIT</h3>
-                            <p class="mt-2 text-gray-300">
-                                After serving in the U.S. Army during World War II, Weizenbaum pursued a career in computer science. He began working at the Massachusetts Institute of Technology (MIT) in 1963, a hub of early AI research.
-                            </p>
-                        </li>
-                    </ul>
-                    <div class="mt-8 text-center">
-                        <a href="https://www.harvardsquarelibrary.org/biographies/joseph-weizenbaum/" target="_blank" class="inline-block px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-full transition-colors duration-200 shadow-md">
-                            Read His Biography
-                        </a>
+            </div>
+        </div>
+
+        <!-- Slide 2: The ELIZA Program -->
+        <div id="slide-2" class="slide bg-color-2">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">The ELIZA Program</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://placehold.co/400x300/fca5a5/7f1d1d?text=ELIZA" alt="Illustration of a chat conversation" class="w-full rounded-xl shadow-lg">
+                    </div>
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">In the mid-1960s, Weizenbaum created **ELIZA**, a program that could "talk" to people.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>ELIZA was a simple program that followed a few basic rules.</li>
+                            <li>It would repeat parts of what the person said back to them as a question.</li>
+                            <li>For example, if you said "My mother makes me mad," ELIZA might reply, "TELL ME MORE ABOUT YOUR MOTHER."</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 2: Major Contributions -->
-        <div id="contributions" class="slide-content hidden">
-            <h2 class="text-4xl font-bold mb-6 text-center text-orange-400">Major Contributions to AI</h2>
-            <div class="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8">
-                <div class="flex-grow w-full">
-                    <ul class="space-y-6 list-none p-0">
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-teal-300">The ELIZA Program</h3>
-                            <p class="mt-2 text-gray-300">
-                                In 1966, Weizenbaum created ELIZA, an early natural language processing program that simulated a psychotherapist. It worked by using simple keyword-based pattern matching to rephrase user inputs as questions.
-                            </p>
-                        </li>
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-teal-300">The "ELIZA Effect"</h3>
-                            <p class="mt-2 text-gray-300">
-                                Weizenbaum was shocked when users, including his own secretary, began to confide in ELIZA, believing the program had genuine understanding and empathy. This phenomenon, where people attribute human-like feelings and intelligence to computers, is now known as the "ELIZA Effect."
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="flex-shrink-0 w-full md:w-2/3 lg:w-1/2">
-                    <div class="bg-gray-800 p-4 rounded-xl shadow-lg border-2 border-teal-500">
-                        <img src="https://placehold.co/600x400/1f2937/d1d5db?text=ELIZA+Chatbot" alt="A placeholder image of a chat interface" class="w-full rounded-lg mb-4">
-                        <p class="text-gray-400 text-center text-sm">A graphical representation of the simple chat interface for the ELIZA program.</p>
+        <!-- Slide 3: The ELIZA Effect -->
+        <div id="slide-3" class="slide bg-color-3">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">The ELIZA Effect</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">Weizenbaum was shocked by how people reacted to ELIZA. This became known as the **"ELIZA effect."**</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Users quickly forgot they were talking to a simple program.</li>
+                            <li>They would share personal secrets and emotions, believing the computer understood them.</li>
+                            <li>This made Weizenbaum realize that people were too willing to treat computers as intelligent beings, which he found dangerous.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/400x300/6b7280/ffffff?text=ELIZA+Effect" alt="Illustration of a person talking to a computer" class="w-full rounded-xl shadow-lg">
                     </div>
                 </div>
             </div>
-            <div class="mt-8 text-center">
-                <a href="https://builtin.com/artificial-intelligence/eliza-effect" target="_blank" class="inline-block px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-full transition-colors duration-200 shadow-md">
-                    Learn About the ELIZA Effect
-                </a>
-            </div>
         </div>
 
-        <!-- Slide 3: Lasting Influence -->
-        <div id="influence" class="slide-content hidden">
-            <h2 class="text-4xl font-bold mb-6 text-center text-orange-400">A Lasting Influence</h2>
-            <div class="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8">
-                <div class="flex-shrink-0 w-full md:w-2/3 lg:w-1/2">
-                    <div class="bg-gray-800 p-4 rounded-xl shadow-lg border-2 border-teal-500">
-                        <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Computer+Power+and+Human+Reason" alt="A placeholder image of the book cover for Computer Power and Human Reason" class="w-full rounded-lg mb-4">
-                        <p class="text-gray-400 text-center text-sm">The cover of Weizenbaum's seminal book.</p>
+        <!-- Slide 4: Computer Power and Human Reason -->
+        <div id="slide-4" class="slide bg-color-4">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">Computer Power and Human Reason</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://placehold.co/400x300/a8a29e/ffffff?text=Book+Cover" alt="Illustration of a book cover with a computer and a human brain" class="w-full rounded-xl shadow-lg">
+                    </div>
+                    <div class="text-left space-y-4">
+                        <p class="text-lg text-gray-700 font-semibold">Weizenbaum became a vocal critic of AI and wrote a famous book: **Computer Power and Human Reason**.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>He argued that there are some things, like wisdom and empathy, that computers should never be trusted with.</li>
+                            <li>He worried that people would start to see the world only through a computer's logical lens.</li>
+                            <li>His book warned against using technology without considering the human and ethical consequences.</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="flex-grow w-full">
-                    <ul class="space-y-6 list-none p-0">
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-teal-300">A Critic of His Own Field</h3>
-                            <p class="mt-2 text-gray-300">
-                                Dismayed by the uncritical embrace of AI, Weizenbaum became one of its most prominent critics. His 1976 book, <strong><cite>Computer Power and Human Reason: From Judgment to Calculation</cite></strong>, warned against the dangers of treating computers as replacements for human judgment, empathy, and wisdom.
-                            </p>
-                        </li>
-                        <li class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                            <h3 class="text-2xl font-semibold text-teal-300">Ethical AI and Modern Relevance</h3>
-                            <p class="mt-2 text-gray-300">
-                                Weizenbaum argued that computers can only deal with quantifiable data and can never possess qualities like compassion or wisdom. His warnings about the over-reliance on technology and the trivialization of human reason are more relevant than ever in the age of large language models and widespread AI adoption.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-8 text-center">
-                <a href="https://www.youtube.com/watch?v=F0f-90e9iFo" target="_blank" class="inline-block px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-full transition-colors duration-200 shadow-md">
-                    Watch a Video on AI Ethics
-                </a>
             </div>
         </div>
 
-    </main>
+        <!-- Slide 5: Lasting Legacy -->
+        <div id="slide-5" class="slide bg-color-1">
+            <div class="card space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">His Enduring Impact</h2>
+                <p class="text-lg text-gray-700">Joseph Weizenbaum's legacy is one of ethical questioning and caution.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left space-y-4">
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>His work showed that even simple programs can fool people into thinking they are intelligent.</li>
+                            <li>He remains an important figure in the discussion of **AI ethics**, reminding us to be critical of technology.</li>
+                            <li>His ideas are more important than ever as AI becomes more and more powerful.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/400x300/60a5fa/ffffff?text=Ethical+AI" alt="Illustration of a human brain with a circuit" class="w-full rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4">
+        <button id="prevBtn" class="navigation-button">Previous</button>
+        <button id="nextBtn" class="navigation-button">Next</button>
+    </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Show the first slide on page load
-            showSlide('early-life');
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
         });
 
-        // Function to show a specific slide and hide the others
-        function showSlide(slideId) {
-            // Get all slide elements
-            const slides = document.querySelectorAll('.slide-content');
-            
-            // Hide all slides
-            slides.forEach(slide => {
-                slide.classList.add('hidden');
-            });
-            
-            // Show the selected slide
-            const selectedSlide = document.getElementById(slideId);
-            if (selectedSlide) {
-                selectedSlide.classList.remove('hidden');
-            }
-        }
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        // Initialize the first slide
+        window.onload = () => {
+            showSlide(currentSlide);
+        };
     </script>
 </body>
 </html>
+
